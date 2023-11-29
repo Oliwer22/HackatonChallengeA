@@ -1,0 +1,6 @@
+:root {
+    --primary-color-: #7ab800; /* Text color in light mode */
+    --logo-color: #4d4e6a; /* Background color in dark mode */
+    --basic-font-fam: Arial, Helvetica, sans-serif;
+    --basic-transition-ms:600ms;
+}
