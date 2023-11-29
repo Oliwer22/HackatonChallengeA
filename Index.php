@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <label for="Other">Andere Optie:</label>
         <input type="text" id="Other" name="Other">
     </div>
-    <input type="submit" value="Submit">
+    <input type="submit" value="Submit" onclick="submitFormWithDelay(event)">
 </form>
 
 

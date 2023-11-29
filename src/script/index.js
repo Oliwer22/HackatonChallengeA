@@ -4,3 +4,12 @@ function checkOther(selectedValue) {
     // laat zien dat input en zet op block
     otherInput.style.display = selectedValue === 'Other' ? 'block' : 'none';
 }
+
+
+function submitFormWithDelay(event) {
+    event.preventDefault(); // zorg dat die niet stuurt leeg
+
+    setTimeout(function() {
+      document.getElementById("myForm").submit(); // Stuurt na 5 seconde
+    }, 5000); 
+  }
