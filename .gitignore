@@ -1,5 +1,6 @@
 
 .vscode/
+vendor/
 .env
 Note.txt
 composer.json
