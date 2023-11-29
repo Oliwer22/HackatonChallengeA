@@ -2,3 +2,5 @@
 .vscode/
 .env
 Note.txt
+composer.json
+composer.lock
