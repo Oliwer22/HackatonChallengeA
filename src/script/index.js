@@ -13,3 +13,14 @@ function submitFormWithDelay(event) {
       document.getElementById("myForm").submit(); // Stuurt na 5 seconde
     }, 5000); 
   }
+
+
+  function submitForm() {
+    let formData = new FormData(document.getElementById("myForm"));
+    let xhr = new XMLHttpRequest();
+    xhr.open("POST", "Index.php");
+    xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+    xhr.send(formData);
+    formData = null;
+  }
+  document.getElementById("myForm").addEventListener("submit", submitForm);

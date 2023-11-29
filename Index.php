@@ -14,7 +14,6 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $naam = $_POST['Naam'];
     $email = $_POST['Email'];
@@ -23,16 +22,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $standplaats_organisatie = $_POST['Standplaats_Organisatie'];
     $contactpersoon = $_POST['Contactpersoon'];
     $sectoren = $_POST['Sectoren'];
-
     // Kijkt naar de opties
     $sectoren = ($sectoren == 'Other') ? $_POST['Other'] : $sectoren;
-
     // Insert data into database
     $sql = "INSERT INTO algemeen (Naam, Email, Function, Telefoon, Standplaats_Organisatie, Contactpersoon, Sectoren, Invuldatum)
     VALUES ('$naam', '$email', '$function', '$telefoon', '$standplaats_organisatie', '$contactpersoon', '$sectoren', NOW())";
-
     if ($conn->query($sql) === TRUE) {
-        echo "Oke kan verder";
+        
+        header("Location: Pages/Rat.php");
+        exit();
     } else {
         echo "Error: " . $sql . "<br>" . $conn->error;
     }
